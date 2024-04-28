@@ -1,0 +1,28 @@
+// is a number a prime number
+bool isPrime(int x)
+{
+	bool ret = 1;
+	if(x == 1|| (x%2 == 0&&x != 2))
+	    ret = 0;
+	for(int i=3; i<=sqrt(x); i+=2 )
+	{
+	    if( x % i == 0)
+	    {
+		    ret = 0;
+		    break;
+	    }
+	}
+	return ret;//1是素数，0不是素数
+}
+
+// return a number's digit
+int countDigit(int a) {
+	int count = 1;
+	if (a > 10) {
+		while (a > 10) {
+			a /= 10;
+			count++;
+		}
+	}
+	return count;//返回值count为该数的位数
+}
